@@ -1,12 +1,12 @@
-# Carrera Java Programmer SE 8
+# Cursos de Java Programmer SE 8
 
-Código fuente de los ejercicios realizados en clase para la carrera de Java Programmer SE 8 en Softrain 2018.
+Código fuente de los ejercicios realizados en clase para los cursos de Java Programmer SE 8 en Softrain 2018.
 
 ## Instructor:
 
 * Anthony Hurtado - anhurtado@outlook.com
 
-## Módulos de la Carrera:
+## Cursos:
 
 1) Fundamentos de Java.
 2) Lenguaje de Programación Java.
