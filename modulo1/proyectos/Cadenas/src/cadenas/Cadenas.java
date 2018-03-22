@@ -4,7 +4,8 @@ public class Cadenas {
     public static void main(String[] args) {
         // Declarando mis variable de tipo String
         String cadena;
-        cadena = "Hola ";
+        cadena = "Hola";
+        cadena += " ";
         cadena += "mundo";
         
         // Presento la información
@@ -20,6 +21,7 @@ public class Cadenas {
         // Concatenar las cadenas de caracteres
         stringBuilder.append("Hola").append(" ").append("mundo");
         // Agregando cadenas
+        stringBuilder.insert(0, "¡");
         stringBuilder.insert(stringBuilder.length(), "!");
         // Presento la información
         System.out.println(stringBuilder);
@@ -27,7 +29,9 @@ public class Cadenas {
         // Usando StringBuffer
         StringBuffer stringBuffer = new StringBuffer();
         // Concatenar las cadenas de caracteres
-        stringBuffer.append("Hola").append(" ").append("mundo");
+        stringBuffer.append("Hola");
+        stringBuffer.append(" ");
+        stringBuffer.append("mundo");
         // Agregando cadenas
         stringBuffer.insert(stringBuffer.length(), "!");
         // Presento la información

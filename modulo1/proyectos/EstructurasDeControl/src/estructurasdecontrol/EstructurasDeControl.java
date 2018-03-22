@@ -3,7 +3,7 @@ package estructurasdecontrol;
 public class EstructurasDeControl {
     public static void main(String[] args) {
         // Declarando las variables necesarias
-        int dia = 0;
+        int dia;
         String diaSeleccionado;
         
         // Instanciando la clase Scanner
@@ -13,7 +13,7 @@ public class EstructurasDeControl {
         System.out.print("Introduzca un número: ");
         
         // Capturando el valor ingresado por el usuario
-        dia = scan.nextInt();       
+        dia = scan.nextInt();
         
         // Establezco mi estructura de control y evaluo la variable "dia"
         switch (dia) {
