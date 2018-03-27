@@ -15,26 +15,30 @@ public class Cadenas {
         System.out.println(cadena.isEmpty());
         System.out.println(cadena.toUpperCase());
         System.out.println(cadena.toLowerCase());
+        System.out.println("");
         
         // Usando StringBuilder
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder sb1 = new StringBuilder();
         // Concatenar las cadenas de caracteres
-        stringBuilder.append("Hola").append(" ").append("mundo");
+        sb1.append("Hola").append(" ").append("mundo");
         // Agregando cadenas
-        stringBuilder.insert(0, "¡");
-        stringBuilder.insert(stringBuilder.length(), "!");
+        sb1.insert(0, "¡");
+        sb1.insert(sb1.length(), "!");
         // Presento la información
-        System.out.println(stringBuilder);
+        System.out.println("StringBuilder:");
+        System.out.println(sb1);
+        System.out.println("");
         
         // Usando StringBuffer
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuffer sb2 = new StringBuffer();
         // Concatenar las cadenas de caracteres
-        stringBuffer.append("Hola");
-        stringBuffer.append(" ");
-        stringBuffer.append("mundo");
+        sb2.append("Hola");
+        sb2.append(" ");
+        sb2.append("mundo");
         // Agregando cadenas
-        stringBuffer.insert(stringBuffer.length(), "!");
+        sb2.insert(sb2.length(), "!");
         // Presento la información
-        System.out.println(stringBuffer);
+        System.out.println("StringBuffer:");
+        System.out.println(sb2);
     }
 }

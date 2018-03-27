@@ -11,7 +11,7 @@ public class EstructurasIterativas {
             System.out.println("El valor es: "+ a);
             
             // Incremento el valor de la variable "a" en 1
-            a++;
+            a++; // a = a + 1; 
         }
         
         // Estructura Iterativa "DoWhile"
@@ -20,7 +20,7 @@ public class EstructurasIterativas {
         } while(a < 5);
         
         // Estructura Iterativa "For"
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             System.out.println("For #" + i);
         }
     }

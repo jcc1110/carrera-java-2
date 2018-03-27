@@ -10,13 +10,13 @@ public class Scanner {
         // Instancia de la clase Scanner
         java.util.Scanner scan = new java.util.Scanner(System.in);
         
-        // Solicito por pantalla la edad al usuario
+        // Solicito por pantalla el nombre al usuario
         System.out.print("Dame tu nombre: ");        
         // Capturando el dato ingresado por el usuario
         nombre = scan.next();
-        if (!nombre.matches("[a-zA-Z]+")) {
+        /*if (!nombre.matches("[a-zA-Z]+")) {
             System.out.println("El nombre solo debe contener letras");
-        }
+        }*/
         
         // Solicito por pantalla la edad al usuario
         System.out.print("Dame tu edad: ");        
@@ -27,6 +27,6 @@ public class Scanner {
         anio = 2018 - edad;
         
         // Presentando el resultado
-        System.out.println("Hola, " + nombre + " naciste en el año: " + anio);
+        System.out.println("Hola, " + nombre + " naciste en el año " + anio);
     }
 }

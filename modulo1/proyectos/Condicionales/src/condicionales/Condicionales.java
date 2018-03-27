@@ -6,7 +6,7 @@ public class Condicionales {
         int a = 6;
         int b = 5;
         
-        // Condificionales if / else if / else
+        // Condicionales if / else if / else
         if (a == b) {
             System.out.println("Es igual");
         } else if (a > b) {

@@ -23,7 +23,8 @@ public class Variables {
         
         // Modificar mi variable local
         b = 11;
-        System.out.println("El valor de mi variable local es: " + b);
+        System.out.println("El valor de mi variable global modificada es: " + a);
+        System.out.println("El valor de mi variable local modificada es: " + b);
         
         // Realizando una llamada a un método
         saludar();
@@ -34,6 +35,8 @@ public class Variables {
         int b = 15;
         
         // Presentación de los valores
+        System.out.println("");
+        System.out.println("Método Saludar:");
         System.out.println("El valor de mi variable global es: " + a);
         System.out.println("El valor de mi variable local es: " + b);
     }
