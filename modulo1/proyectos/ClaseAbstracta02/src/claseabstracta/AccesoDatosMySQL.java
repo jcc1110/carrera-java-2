@@ -1,15 +1,15 @@
 package claseabstracta;
 
-public class AccesoDatos extends BaseDeDatos {
+public class AccesoDatosMySQL extends BaseDeDatos {
 
     @Override
     public boolean conectar() {
-        return true;
+        return super.usuario == "admin" && super.clave == "12345";
     }
 
     @Override
     public String consultar(String sql) {
-        return super.usuario +" "+ super.clave;
+        return super.usuario +" "+ super.clave + " " + sql;
     }
 
     @Override

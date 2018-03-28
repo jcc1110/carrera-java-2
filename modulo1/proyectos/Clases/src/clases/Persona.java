@@ -27,6 +27,10 @@ public class Persona {
         return cadena;
     }
     
+    public String obtenerNombreCompleto() {
+        return this.apellido + ", " + this.nombre;
+    }
+    
     public int obtenerEdad() {
         return 2018 - this.cumpleanos;
     }

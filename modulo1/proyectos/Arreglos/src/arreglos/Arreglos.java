@@ -14,6 +14,7 @@ public class Arreglos {
         
         // Mostrando los valores
         System.out.println(nombres[2] + " " + apellidos[1] + " " + numeros[2]);
+        System.out.println(""); 
         
         /* ========================================== */
 

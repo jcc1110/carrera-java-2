@@ -8,7 +8,7 @@ package excepciones;
 public class MiExcepcion extends Exception {
     /**
      * Declaro mi constructor y llamo al constructor padre.
-     * @param _mensaje 
+     * @param _mensaje Mensaje a mostrar al usuario
      */
     public MiExcepcion(String _mensaje) {
         super(_mensaje);

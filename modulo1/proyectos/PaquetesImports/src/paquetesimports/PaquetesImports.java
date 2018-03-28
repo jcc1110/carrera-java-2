@@ -1,5 +1,5 @@
 package paquetesimports;
-import paquetes.Paquetes;
+import paquetes.*;
 import static paquetes.Paquetes.despedir;
 
 public class PaquetesImports {

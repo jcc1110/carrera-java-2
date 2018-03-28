@@ -14,7 +14,7 @@ public class Empleado extends Persona {
     
     public String setSueldo(int _sueldo) {
         String mensaje = "";
-        if (_sueldo < 10) {
+        if (_sueldo <= 10) {
             this.sueldo = _sueldo;
             mensaje = "Sueldo actualizado con éxito";
         } else {

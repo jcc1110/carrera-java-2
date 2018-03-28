@@ -1,13 +1,28 @@
 package gettersetter;
 
 public class Persona {
+    // Atributos
     private String nombre;
     private String apellido;
     private int edad;
 
+    // Constructor
     public Persona(String nombre, String apellido, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.edad = edad;
+    }
+    
+    public String nombreCompleto() {
+        return this.getNombre() + " " + this.getApellido() + " tiene " + this.getEdad() + " años";
+    }
+
+    // Métodos: Get/Set
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -26,12 +41,6 @@ public class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+    
+    
 }

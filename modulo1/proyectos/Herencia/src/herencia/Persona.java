@@ -7,7 +7,7 @@ public class Persona {
     
     // Métodos
     public String getNombre() {
-        return this.nombre.toUpperCase();
+        return this.nombre;
     }
     
     public void setNombre(String _nombre) {
@@ -15,7 +15,7 @@ public class Persona {
     }
     
     public String getApellido() {
-        return this.apellido.toUpperCase();
+        return this.apellido;
     }
     
     public void setApellido(String _apellido) {
