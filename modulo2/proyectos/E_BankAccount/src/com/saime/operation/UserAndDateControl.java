@@ -1,6 +1,6 @@
-package operation;
+package com.saime.operation;
 import java.time.LocalDate;
-import structure.I_UserAndDate;
+import com.saime.structures.I_UserAndDate;
 
 public class UserAndDateControl implements I_UserAndDate {
     // Atributos

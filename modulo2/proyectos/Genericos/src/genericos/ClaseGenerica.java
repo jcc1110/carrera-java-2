@@ -11,6 +11,6 @@ public class ClaseGenerica<T> {
     
     // Método para obtener el tipo de dato
     public void obtenerTipo() {
-        System.out.println("El tipo T es: " + objeto.getClass().getName());
+        System.out.println("El tipo T es: " + this.objeto.getClass().getName());
     }
 }

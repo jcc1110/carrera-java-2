@@ -13,24 +13,29 @@ public class ManejoColecciones {
         List empleados = new ArrayList();
         empleados.add("Anthony Hurtado");
         empleados.add("Pepe Mujica");
-        imprimir(empleados);
+        recorrer(empleados);
         
         // Conjunto de datos
         Set tareas = new HashSet();
         tareas.add("Limpiar mi cuarto");
         tareas.add("Sacar la basura");
-        imprimir(tareas);
+        recorrer(tareas);
         
         // Mapa de clave:valor
         Map usuarios = new HashMap();
         usuarios.put(1, "anhurtado");
         usuarios.put(2, "pepe");
-        imprimir(usuarios.keySet());
-        imprimir(usuarios.values());
+        recorrer(usuarios.keySet());
+        recorrer(usuarios.values());
     }
     
-    public static void imprimir(Collection coleccion) {
+    public static void recorrer(Collection coleccion) {
         // Recorro la colección e imprimo cada elemento
+        
+        // Programación funcional
+        coleccion.forEach(elemento -> System.out.println(elemento));
+        
+        // Programación imperativa
         for(Object elemento : coleccion) {
             System.out.println(elemento);
         }

@@ -1,4 +1,4 @@
-package structure;
+package com.saime.structures;
 
 public interface I_UserAndDate {
     // Método para devolver el mensaje formateado al usuario

@@ -40,7 +40,7 @@ public class Fechas {
         Period per = Period.between(ld2, ld);
         System.out.println(per.getDays() + " días");
         System.out.println(per.getMonths() + " meses");
-        System.out.println("Hay: " + per.getYears() +" años");
+        System.out.println(per.getYears() +" años");
         System.out.println("");
 
         // Para formatear las fechas

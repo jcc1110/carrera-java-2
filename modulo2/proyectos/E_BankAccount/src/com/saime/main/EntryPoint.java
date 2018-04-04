@@ -1,7 +1,7 @@
-package main;
+package com.saime.main;
 import java.util.Scanner;
-import operation.FileControl;
-import operation.UserAndDateControl;
+import com.saime.operation.FileControl;
+import com.saime.operation.UserAndDateControl;
 
 public class EntryPoint {
     public static void main(String[] args) {
