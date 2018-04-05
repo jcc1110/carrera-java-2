@@ -19,11 +19,13 @@ public class SwingLayoutManager {
         // Contenedor de componentes
         Container cp = f.getContentPane();
         
-        // Layout a utilizar
+        // Estilos de Layout Manager
         FlowLayout fl = new FlowLayout(FlowLayout.RIGHT);
-        GridLayout gl = new GridLayout(2, 3);
+        GridLayout gl = new GridLayout(3, 3);
         BorderLayout bl = new BorderLayout();
-        cp.setLayout(fl);
+        
+        // Layout a utilizar
+        cp.setLayout(gl);
         
         // Componentes a nueva ventana
         JLabel etiqueta1 = new JLabel("Nombre:");

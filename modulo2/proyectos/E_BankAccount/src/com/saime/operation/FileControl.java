@@ -3,25 +3,31 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileControl {
-    // Atrbutos
+    // Atributos
     private String pathFile;
     private String information;
     
-    // Método de lectura
-    public void readContent() {
+    // Método de lectura del archivo
+    public List<String> readContent() {
         // Creo la instancia del objeto
         File fileObject = new File(this.getPathFile());
+        List<String> infoList = new ArrayList();
         try {
             // Leyendo el archivo
             BufferedReader _entry = new BufferedReader(new FileReader(fileObject));
-            this.information = _entry.readLine();
+            
+            // Me ubico en la primera posición
+            this.setInformation(_entry.readLine());
+            infoList.add(this.getInformation());
             
             // Recorro la información del archivo
-            while (this.information != null) {
-                System.out.println(this.information);
-                this.information = _entry.readLine();
+            while (this.getInformation() != null) {
+                this.setInformation(_entry.readLine());
+                infoList.add(this.getInformation());
             }
             
             // Cierro la conexión al archivo
@@ -29,7 +35,13 @@ public class FileControl {
         } catch (IOException ex) {
             // Muestro el mensaje de la excepción en caso de producirse
             System.out.println(ex.getMessage());
+        } catch(Exception e) {
+            // Muestro el mensaje de la excepción generica
+            System.out.println(e.getMessage());
         }
+        
+        // Devuelvo el arreglo con los datos
+        return infoList;
     }
 
     // Métodos get y set
@@ -39,5 +51,13 @@ public class FileControl {
 
     public void setPathFile(String pathFile) {
         this.pathFile = pathFile;
+    }
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setInformation(String information) {
+        this.information = information;
     }
 }

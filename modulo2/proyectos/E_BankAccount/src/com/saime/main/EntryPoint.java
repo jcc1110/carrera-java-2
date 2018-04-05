@@ -24,6 +24,6 @@ public class EntryPoint {
         
         // Leyendo la información del archivo
         System.out.println("Sus movimientos bancarios son:");
-        fc.readContent();
+        fc.readContent().stream().forEach(System.out::println);
     }
 }

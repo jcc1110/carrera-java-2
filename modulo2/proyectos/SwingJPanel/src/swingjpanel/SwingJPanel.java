@@ -28,7 +28,7 @@ public class SwingJPanel {
         
         // Panel de datos
         JPanel panelDatos = new JPanel();
-        GridLayout gl = new GridLayout(3,2,0,5);
+        GridLayout gl = new GridLayout(3, 2, 0, 5);
         panelDatos.setLayout(gl);
         panelDatos.add(new JLabel("Nombre:"));
         panelDatos.add(new JTextField(10));
@@ -45,6 +45,8 @@ public class SwingJPanel {
 
         // Contenedor
         Container cp = f.getContentPane();
+        //BorderLayout bl = new BorderLayout();
+        //cp.setLayout(bl);
         cp.add(panelDatos, BorderLayout.CENTER);
         cp.add(panelBotones, BorderLayout.SOUTH);
     }

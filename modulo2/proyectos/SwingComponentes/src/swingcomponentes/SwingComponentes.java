@@ -10,7 +10,7 @@ public class SwingComponentes {
     public static void main(String[] args) {
         // Creando mi primera ventana
         JFrame f = new JFrame("Mi Primera Ventana");
-        f.setSize(400, 300);
+        f.setSize(500, 300);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
         

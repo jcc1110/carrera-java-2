@@ -21,12 +21,12 @@ public class HiloContador extends Thread {
                 int valorContador;
                 
                 // Decorador para sincronizar la ejecución de los hilos
-                //synchronized(this.contador) {
+                synchronized(this.contador) {
                     // Obtengo el valor actual del objeto
                     valorContador = this.contador.getContador();
                     
                     // Detengo por un 1 milisegundo la ejecución del hilo
-                    Thread.sleep(1000);
+                    Thread.sleep(1);
                     
                     // Establezco el valor de la propiedad
                     this.contador.setContador(valorContador + 1);
@@ -36,7 +36,7 @@ public class HiloContador extends Thread {
                     mensaje += "Prioridad: "+ super.getPriority() +" / ";
                     mensaje += "Contador: "+ valorContador;
                     System.out.println(mensaje);
-                //}
+                }
             }
         } catch (InterruptedException e) {
             // Muestro el mensaje de la excepción producida

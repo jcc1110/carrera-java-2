@@ -1,6 +1,7 @@
 package com.saime.operation;
 import java.time.LocalDate;
 import com.saime.structures.I_UserAndDate;
+import java.time.format.DateTimeFormatter;
 
 public class UserAndDateControl implements I_UserAndDate {
     // Atributos
@@ -14,13 +15,14 @@ public class UserAndDateControl implements I_UserAndDate {
         
         // Obteniendo la fecha actual
         currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/LL/yyyy");  
         
         // Formateando el mensaje
         message = "Hola, " + this.getUserName() + ". ";
-        message += "Hoy es: " + currentDate;
+        message += "Hoy es: " + formatter.format(currentDate);
         
         // Devolviendo el mensaje formateado
-        return message.toUpperCase();        
+        return message;        
     }
 
     // Métodos get y set

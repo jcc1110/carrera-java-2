@@ -6,7 +6,7 @@ import java.util.Locale;
 public class Localizacion {
     public static void main(String[] args) {
         // Estableciendo la localidad
-        Locale locale = new Locale("es","ES");
+        Locale locale = new Locale("es","VE");
         Locale.setDefault(locale);
         
         // Obteniendo el Locale por defecto
@@ -20,7 +20,7 @@ public class Localizacion {
         System.out.println("Lenguaje / país: " + lc.getDisplayName());
         System.out.println("Código del país (ISO): " + lc.getISO3Country());
         System.out.println("Código del lenguaje (ISO): " + lc.getISO3Language());
-        System.out.println("Códigos (lenguaje / país): " + lc.toLanguageTag());        
+        System.out.println("Códigos (lenguaje / país): " + lc.toLanguageTag());   
         System.out.println("");
         
         // Imprimiendo los lenguajes disponibles
@@ -33,8 +33,8 @@ public class Localizacion {
         // Formateando las fechas
         System.out.println("");
         System.out.println("Formateando las fechas con Locale");
-        DateTimeFormatter fDay = DateTimeFormatter.ofPattern("EEEE", locale);
-        DateTimeFormatter fMonth = DateTimeFormatter.ofPattern("MMMM", locale);        
+        DateTimeFormatter fDay = DateTimeFormatter.ofPattern("EEEE");
+        DateTimeFormatter fMonth = DateTimeFormatter.ofPattern("MMMM", Locale.ITALIAN);        
         System.out.println("Día: " + LocalDate.now().format(fDay));
         System.out.println("Mes: " + LocalDate.now().format(fMonth));
     }    

@@ -9,14 +9,14 @@ public class Conexion {
             Class.forName("com.mysql.jdbc.Driver");
 
             // Realizando la conexión a la base de datos
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/APP", "app", "");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/prueba", "root", "root");
             System.out.println("Conexión exitosa");
 
             // Preparando una consulta
             Statement sta = con.createStatement();
             
             // Consulta a la base de datos
-            ResultSet rs = sta.executeQuery("SELECT * FROM Usuario");
+            ResultSet rs = sta.executeQuery("SELECT * FROM usuario");
 
             // Recorriendo el resultado
             while(rs.next()) {
@@ -25,7 +25,7 @@ public class Conexion {
             }
             
             // Creando un nuevo registro en la BD
-            int resultado = sta.executeUpdate("INSERT INTO Usuario (id, nombre, clave) VALUES (2, 'admin', '123456789')");
+            int resultado = sta.executeUpdate("INSERT INTO usuario (id, nombre, clave) VALUES (4, 'pedro', '123456789')");
             System.out.println("Resultado: " + resultado);
         } catch (SQLException se) {
             System.out.println(se.getMessage());
