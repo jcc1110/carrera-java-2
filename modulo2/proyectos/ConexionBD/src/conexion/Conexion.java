@@ -25,7 +25,7 @@ public class Conexion {
             }
             
             // Creando un nuevo registro en la BD
-            int resultado = sta.executeUpdate("INSERT INTO usuario (id, nombre, clave) VALUES (4, 'pedro', '123456789')");
+            int resultado = sta.executeUpdate("INSERT INTO usuario (id, nombre, clave) VALUES (5, 'jose', '123456789')");
             System.out.println("Resultado: " + resultado);
         } catch (SQLException se) {
             System.out.println(se.getMessage());
