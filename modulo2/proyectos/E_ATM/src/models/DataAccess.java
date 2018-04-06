@@ -25,7 +25,8 @@ public class DataAccess {
         try {
             this.connectToDB();            
             Statement sta = this.con.createStatement();
-            sql = "SELECT * FROM usuario WHERE tarjeta='"+ usuario.getTarjeta() +"' AND clave='"+ usuario.getClave() +"'";            
+            sql = "SELECT * FROM usuario WHERE tarjeta='"+ usuario.getTarjeta() +"' AND clave='"+ usuario.getClave() +"'";
+            
             ResultSet rs = sta.executeQuery(sql);                        
             while(rs.next()) {
                 result = (rs.getString("tarjeta").equals(usuario.getTarjeta()) && rs.getString("clave").equals(usuario.getClave()));
