@@ -49,4 +49,8 @@ public class Operaciones {
             System.out.println("Hola desde Sumar");
         }
     }
+    
+    public class Resta {}
+    
+    public class Multiplicacion {}
 }

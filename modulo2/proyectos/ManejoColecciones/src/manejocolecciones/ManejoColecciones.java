@@ -23,8 +23,8 @@ public class ManejoColecciones {
         
         // Mapa de clave:valor
         Map usuarios = new HashMap();
-        usuarios.put(1, "anhurtado");
-        usuarios.put(2, "pepe");
+        usuarios.put("s24dafszf", "anhurtado");
+        usuarios.put("asda96341", "pepe");
         recorrer(usuarios.keySet());
         recorrer(usuarios.values());
     }
@@ -33,7 +33,8 @@ public class ManejoColecciones {
         // Recorro la colección e imprimo cada elemento
         
         // Programación funcional
-        coleccion.forEach(elemento -> System.out.println(elemento));
+        coleccion.forEach(elemento -> System.out.println(elemento.toString().toUpperCase()));
+        coleccion.forEach(System.out::println);
         
         // Programación imperativa
         for(Object elemento : coleccion) {

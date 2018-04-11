@@ -15,8 +15,8 @@ public class EntryPoint {
      */
     public static void main(String[] args) {
         // Instancia de las clases necesarias
-        int resultado = 0;
-        boolean mensaje = true;
+        int result = 0;
+        boolean message = true;
         Scanner scan = new Scanner(System.in);
         Operation op = new Operation();
         
@@ -41,34 +41,31 @@ public class EntryPoint {
         
         // Evaluamos el operador
         switch(op.getOperator()) {
-            case 1: // Sumar
-                resultado = op.sumar();
-                break;
-            case 2: // Restar
-                resultado = op.restar();
-                break;
-            case 3: // Multiplicar
-                resultado = op.multiplicar();
-                break;
-            case 4: // Dividir
+            // Sumar
+            case 1: result = op.sumar(); break;
+            // Restar
+            case 2: result = op.restar(); break;
+            // Multiplicar
+            case 3: result = op.multiplicar(); break;
+            // Dividir
+            case 4: 
                 try {
-                    resultado = op.dividir();
+                    result = op.dividir();
                 } catch(DivisionZeroException dze) {
                     System.out.println(dze.getMessage());
-                    mensaje = false;
+                    message = false;
                 } catch(Exception ex) {
                     System.out.println(ex.getMessage());
-                    mensaje = false;
+                    message = false;
                 }
                 break;
-            default:
-                mensaje = false;
-                break;
+            // Caso por defecto en caso de no sea ningún valor
+            default: message = false; break;
         }
         
-        // Muestro el resultado
-        if (mensaje) {
-            System.out.println("El resultado de su operación es: " + resultado);
+        // Muestro el resultado de la operación
+        if (message) {
+            System.out.println("El resultado de su operación es: " + result);
         } else {
             System.out.println("Opción no válida");
         }

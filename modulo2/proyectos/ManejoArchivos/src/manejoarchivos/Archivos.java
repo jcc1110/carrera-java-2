@@ -9,9 +9,10 @@ import java.io.IOException;
 public class Archivos {
     // Crear un arhivo
     public static void crear(String ruta) {
-        // Instancio mi clase
-        File archivo = new File(ruta);
         try {
+            // Instancio mi clase
+            File archivo = new File(ruta);
+            
             // Utilizo el objeto PrintWriter y FileWriter
             PrintWriter salida = new PrintWriter(new FileWriter(archivo));
             
@@ -28,9 +29,10 @@ public class Archivos {
 
     // Escribir dentro de un archivo
     public static void escribir(String ruta) {
-        // Instancio mi clase
-        File archivo = new File(ruta);
         try {
+            // Instancio mi clase
+            File archivo = new File(ruta);
+            
             // Se utiliza el objeto PrintWriter y FileWriter
             PrintWriter salida = new PrintWriter(new FileWriter(archivo));
             
@@ -50,10 +52,12 @@ public class Archivos {
         }
     }
 
+    // Leer la información de un archivo
     public static void leer(String ruta) {
-        // Instancio mi clase
-        File archivo = new File(ruta);
         try {
+            // Instancio mi clase
+            File archivo = new File(ruta);
+            
             // Se utiliza el objeto BufferedRead y FileReader
             BufferedReader entrada = new BufferedReader(new FileReader(archivo));
             
@@ -73,14 +77,16 @@ public class Archivos {
         }
     }
 
+    // Agregar información al archivo
     public static void anexar(String ruta) {
-        // Instancio mi clase
-        File archivo = new File(ruta);
         try {
+            // Instancio mi clase
+            File archivo = new File(ruta);
+            
             // Se utiliza el objeto PrintWriter y FileWriter
             PrintWriter salida = new PrintWriter(new FileWriter(archivo, true));
             
-            // Anado la información necesaria
+            // Añado la información necesaria
             String contenido = "Anexando información al archivo";
             salida.println(contenido);
             salida.println("Fin de anexar");
