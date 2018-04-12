@@ -21,7 +21,6 @@ public class MainFrame extends javax.swing.JFrame {
         // Establecemos la localización por defecto
         /*Locale lc = new Locale("en","US");
         Locale.setDefault(lc);*/
-        
         initComponents();
     }
 
@@ -67,17 +66,15 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton2)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,11 +83,11 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,14 +96,20 @@ public class MainFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Locale lc = new Locale("es","VE");
         Locale.setDefault(lc);
-        ResourceBundle rb = ResourceBundle.getBundle("e_internacionalizacion/Bundle");
+        ResourceBundle rb;
+        rb = ResourceBundle.getBundle("e_internacionalizacion/Bundle");
+        
+        // LLamar al método para cambiar el idioma usando el recurso
         cambiarIdioma(rb);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Locale lc = new Locale("en","US");
         Locale.setDefault(lc);
-        ResourceBundle rb = ResourceBundle.getBundle("e_internacionalizacion/Bundle_en_US");
+        ResourceBundle rb;
+        rb = ResourceBundle.getBundle("e_internacionalizacion/Bundle_en_US");
+        
+        // LLamar al método para cambiar el idioma usando el recurso
         cambiarIdioma(rb);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -116,7 +119,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel2.setText(resource.getString("MainFrame.jLabel2.text"));
         jButton1.setText(resource.getString("MainFrame.jButton1.text"));
         jButton2.setText(resource.getString("MainFrame.text"));
-        
     }
     
     /**

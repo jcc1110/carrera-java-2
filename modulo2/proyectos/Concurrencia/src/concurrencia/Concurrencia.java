@@ -9,6 +9,10 @@ public class Concurrencia {
         HiloContador h1 = new HiloContador("PrimerHilo", contador);
         HiloContador h2 = new HiloContador("SegungoHilo", contador);
         
+        // Cambiando la prioridad de los hilos
+        h1.setPriority(4);
+        h2.setPriority(1);
+        
         // Inicio los hilos
         h1.start();
         h2.start();

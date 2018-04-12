@@ -6,7 +6,7 @@ import java.util.Locale;
 public class Localizacion {
     public static void main(String[] args) {
         // Estableciendo la localidad
-        Locale locale = new Locale("es","VE");
+        Locale locale = new Locale("zh","CN");
         Locale.setDefault(locale);
         
         // Obteniendo el Locale por defecto
@@ -27,14 +27,14 @@ public class Localizacion {
         System.out.println("Lenguajes disponibles:");
         Locale[] availableLocales = Locale.getAvailableLocales();
         for (Locale l : availableLocales) {
-            System.out.println(l.getDisplayLanguage() + " (" + l.getDisplayName() + ")");
+            System.out.println(l.getDisplayCountry() + ": " + l.toLanguageTag());
         }
         
         // Formateando las fechas
         System.out.println("");
         System.out.println("Formateando las fechas con Locale");
         DateTimeFormatter fDay = DateTimeFormatter.ofPattern("EEEE");
-        DateTimeFormatter fMonth = DateTimeFormatter.ofPattern("MMMM", Locale.ITALIAN);        
+        DateTimeFormatter fMonth = DateTimeFormatter.ofPattern("MMMM", Locale.FRANCE);
         System.out.println("Día: " + LocalDate.now().format(fDay));
         System.out.println("Mes: " + LocalDate.now().format(fMonth));
     }    

@@ -5,10 +5,10 @@ public class HiloContador extends Thread {
     Contador contador;
 
     // Constructor
-    public HiloContador(String name, Contador contador) {
+    public HiloContador(String name, Contador counter) {
         // Llamo al constructor de la clase padre (Thread) y le paso el nombre del hilo
         super(name);
-        this.contador = contador;
+        this.contador = counter;
     }
     
     // Implemento el método run() de la clase padre (Thread)
@@ -26,7 +26,7 @@ public class HiloContador extends Thread {
                     valorContador = this.contador.getContador();
                     
                     // Detengo por un 1 milisegundo la ejecución del hilo
-                    Thread.sleep(1);
+                    Thread.sleep(1000);
                     
                     // Establezco el valor de la propiedad
                     this.contador.setContador(valorContador + 1);
@@ -41,6 +41,8 @@ public class HiloContador extends Thread {
         } catch (InterruptedException e) {
             // Muestro el mensaje de la excepción producida
             System.out.println(e.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }

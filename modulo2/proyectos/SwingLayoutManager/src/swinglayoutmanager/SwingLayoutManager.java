@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 public class SwingLayoutManager {
     public static void main(String[] args) {
         // Llamando a mi ventana
-        JFrame f = new JFrame("Layout Manager");
+        JFrame f = new JFrame("Layouts Manager");
         f.setSize(400, 300);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
@@ -20,12 +20,12 @@ public class SwingLayoutManager {
         Container cp = f.getContentPane();
         
         // Estilos de Layout Manager
-        FlowLayout fl = new FlowLayout(FlowLayout.RIGHT);
+        FlowLayout fl = new FlowLayout(FlowLayout.LEFT);
         GridLayout gl = new GridLayout(3, 3);
         BorderLayout bl = new BorderLayout();
         
         // Layout a utilizar
-        cp.setLayout(gl);
+        cp.setLayout(bl);
         
         // Componentes a nueva ventana
         JLabel etiqueta1 = new JLabel("Nombre:");

@@ -9,11 +9,16 @@ public class Conexion {
             Class.forName("com.mysql.jdbc.Driver");
 
             // Realizando la conexión a la base de datos
-            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/prueba", "root", "root");
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://127.0.0.1:3306/prueba1", "root", "root");
             System.out.println("Conexión exitosa");
 
             // Preparando una consulta
             Statement sta = con.createStatement();
+            
+            // Creando un nuevo registro en la BD
+            int resultado = sta.executeUpdate("INSERT INTO usuario (id, nombre, clave) VALUES (2, 'pedro', '123456789')");
+            System.out.println("Resultado: " + resultado);             
             
             // Consulta a la base de datos
             ResultSet rs = sta.executeQuery("SELECT * FROM usuario");
@@ -21,16 +26,15 @@ public class Conexion {
             // Recorriendo el resultado
             while(rs.next()) {
                 // Imprimiento cada registro
-                System.out.println(rs.getInt("id") + " - " + rs.getString("nombre") + " - " + rs.getString("clave"));
-            }
-            
-            // Creando un nuevo registro en la BD
-            int resultado = sta.executeUpdate("INSERT INTO usuario (id, nombre, clave) VALUES (5, 'jose', '123456789')");
-            System.out.println("Resultado: " + resultado);
-        } catch (SQLException se) {
-            System.out.println(se.getMessage());
+                System.out.println(
+                        rs.getInt("id") + " - " + 
+                        rs.getString("nombre") + " - " + 
+                        rs.getString("clave"));
+            }            
         } catch (ClassNotFoundException ce) {
             System.out.println(ce.getMessage());
+        } catch (SQLException se) {
+            System.out.println(se.getMessage());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

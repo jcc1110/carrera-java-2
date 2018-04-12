@@ -8,7 +8,7 @@ public class StreamParalelos {
         List<Integer> numeros = new ArrayList();
         
         // Añado al arreglo los números del 1 al 5
-        for (int i = 0; i < 5; i++) {
+        for (int i=0; i<5; i++) {
             numeros.add(i);
         }
         
@@ -16,7 +16,7 @@ public class StreamParalelos {
         numeros.stream().forEach(System.out::println);
         
         // Separo los resultados
-        System.out.println("====");
+        System.out.println("========");
         
         // Muestro los números por el parallelStream()
         numeros.parallelStream().forEach(System.out::println);

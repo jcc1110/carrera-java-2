@@ -11,9 +11,9 @@ public class SumarEnteros extends RecursiveTask<Long> {
     private final int cortes = 50;
     
     // Constructor
-    public SumarEnteros(int[] numeros, int inicio) {
-        this.numeros = numeros;
-        this.inicio = inicio;
+    public SumarEnteros(int[] _numeros, int _inicio) {
+        this.numeros = _numeros;
+        this.inicio = _inicio;
     }
  
     @Override

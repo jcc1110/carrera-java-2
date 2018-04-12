@@ -32,21 +32,19 @@ public class SwingJPanel {
         panelDatos.setLayout(gl);
         panelDatos.add(new JLabel("Nombre:"));
         panelDatos.add(new JTextField(10));
-        panelDatos.add(new JLabel("DNI:"));
+        panelDatos.add(new JLabel("Cedula:"));
         panelDatos.add(new JTextField(10));
         panelDatos.add(new JLabel("Fecha de nacimiento: "));
         panelDatos.add(panelFecha);
 
         // Panel de botones
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new FlowLayout());
+        panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER));
         panelBotones.add(new JButton("Aceptar"));
         panelBotones.add(new JButton("Cancelar"));
 
         // Contenedor
         Container cp = f.getContentPane();
-        //BorderLayout bl = new BorderLayout();
-        //cp.setLayout(bl);
         cp.add(panelDatos, BorderLayout.CENTER);
         cp.add(panelBotones, BorderLayout.SOUTH);
     }
