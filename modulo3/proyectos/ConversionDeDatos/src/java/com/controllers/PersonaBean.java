@@ -1,10 +1,10 @@
 package com.controllers;
 import java.io.Serializable;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 
 @Named(value = "persona")
-@RequestScoped
+@ApplicationScoped
 public class PersonaBean implements Serializable {
     // Atributos
     private static final long serialVersionUID = 1L;
@@ -14,7 +14,7 @@ public class PersonaBean implements Serializable {
     
     // Constructor
     public PersonaBean() {
-        this.monto = 1200.50;
+        this.setMonto(1200.50);
     }
 
     // Métodos

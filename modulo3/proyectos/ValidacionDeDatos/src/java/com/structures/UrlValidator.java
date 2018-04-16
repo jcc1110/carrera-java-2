@@ -1,6 +1,4 @@
 package com.structures;
-import java.net.URI;
-import java.net.URISyntaxException;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -17,16 +15,18 @@ public class UrlValidator implements Validator {
             String urlValue = value.toString();
             
             // Valido que la cadena no tengo números y tengo http://
-            if (urlValue.matches("^\\d+$") || !urlValue.startsWith("http://", 0)) {                
+            if (urlValue.matches("^\\d+$") || 
+                    !urlValue.startsWith("http://", 0)) {              
                 // Muestro un mensaje de error personalizado
-                FacesMessage msg = new FacesMessage("Error", "El formato de la URL es inválido");
+                FacesMessage msg = new FacesMessage(
+                        "El formato de la URL es inválido", "Error");
                 msg.setSeverity(FacesMessage.SEVERITY_ERROR);
                 
                 // Genero una Exception
                 throw new ValidatorException(msg);
             }            
         } catch (ValidatorException e) {
-            FacesMessage msg = new FacesMessage("Error", e.getMessage());
+            FacesMessage msg = new FacesMessage(e.getMessage(), "Error");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             throw new ValidatorException(msg);
         }

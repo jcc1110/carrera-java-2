@@ -19,7 +19,7 @@
           <li>
               [pattern="#0.000"] : 
               <h:outputText value="#{persona.monto}" >
-                  <f:convertNumber pattern="#0.000" />
+                  <f:convertNumber pattern="#0.0" />
               </h:outputText>
           </li>
           <li>
@@ -35,7 +35,7 @@
               </h:outputText>
           </li>
           <li>
-              [type="percent"] : 
+              [percent] : 
               <h:outputText value="#{persona.monto}" >
                   <f:convertNumber type="percent" />
               </h:outputText>
@@ -56,11 +56,11 @@
       <!-- Custom Converter -->
       <h2>Convertidor Personalizado de URL</h2>
       <h:form>
-          <h:inputText id="txtUrl" value="#{ persona.url }" label="URL">
+         <h:inputText id="txtUrl" value="#{ persona.url }" label="URL">
             <f:converter converterId="com.controllers.UrlConverter" />
          </h:inputText>		 
          <h:commandButton value="Convertir" action="resultado"/>
-         <h:message for="txtUrl" style="color:red" />
       </h:form>
+        <h:message for="txtUrl" style="color:red" />
     </h:body>
 </html>

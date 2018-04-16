@@ -17,14 +17,14 @@ public class SaludoBean {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public String saludar() {
-        return "Tu nombres es: " + this.getNombre();
-    }
 
     public String getFecha() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/LL/yyyy");
         this.fecha = dtf.format(LocalDate.now());
         return this.fecha;
+    }
+    
+    public String saludar() {
+        return "Tu nombre es: " + this.getNombre();
     }
 }

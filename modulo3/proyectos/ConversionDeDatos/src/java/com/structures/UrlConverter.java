@@ -11,11 +11,19 @@ public class UrlConverter implements Converter {
         // Variables
         StringBuilder url = new StringBuilder();
         
-        // Verifico la cadena
-        if (!value.startsWith("http://", 0)) {
-            url.append("http://www.");
+        // Verifico la cadena al iniciar
+        if (!value.startsWith("http://", 0) || 
+            !value.startsWith("https://", 0)) {
+            url.append("https://www.");
         }
+        
+        // Añado el valor enviado por el usuario
         url.append(value);
+        
+        // Verifico la cadena al finalizar
+        if (!value.endsWith(".com")) {
+            url.append(".com");
+        }
         
         // Devuelvo el valor
         return url.toString();

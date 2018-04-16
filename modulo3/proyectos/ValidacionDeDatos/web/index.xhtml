@@ -6,56 +6,69 @@
     <h:head>
         <title>Validación de Datos</title>
         <style>
-            .formato {
-                color: red;
-                background: #c0c0c0;
+            .formato, #javax_faces_developmentstage_messages li { 
+                color: darkblue !important;
+                margin-left: 3px;
+                border: 1px solid gray;
+                border-radius: 5%;
+                padding: 2px;   
             }
         </style>
     </h:head>
     <h:body>
         <h1>Información de Persona</h1>
+        <hr />
         <h:form>
             <!-- NOMBRE -->
             <h:outputLabel value="Nombre: " />
-            <h:inputText id="txtName" value="#{ persona.nombre }" label="Nombre">
-                <f:validateLength minimum="0" maximum="8" />
-                <f:validateRequired />
+            <h:inputText id="txtName" 
+                         value="#{ persona.nombre }" 
+                         label="Nombre">
+                <f:validateLength minimum="3" maximum="8" />
             </h:inputText>
-            <h:message for="txtName" class="formato" />
-            
+            <!--<h:message for="txtName" class="formato" />-->
+
             <!-- EDAD -->
             <br/>
             <h:outputLabel value="Edad: " />
-            <h:inputText id="txtAge" value="#{ persona.edad }" label="Edad">
+            <h:inputText id="txtAge" 
+                         value="#{ persona.edad }" 
+                         label="Edad">
                 <f:validateLongRange minimum="18" maximum="50" />
             </h:inputText>
-            <h:message for="txtAge" class="formato" />
+            <!--<h:message for="txtAge" class="formato" />-->
 
             <!-- SALARIO -->
             <br/>
             <h:outputLabel value="Salario: " />
-            <h:inputText id="txtSalary" value="#{ persona.salario }" label="Salario">
+            <h:inputText id="txtSalary" 
+                         value="#{ persona.salario }" 
+                         label="Salario">
                 <f:validateDoubleRange minimum="100.00" maximum="500.00" />
             </h:inputText>
-            <h:message for="txtSalary" class="formato" />
-            
+            <!--<h:message for="txtSalary" class="formato" />-->
+
             <!-- CORREO -->
             <br/>
             <h:outputLabel value="Correo: " />
-            <h:inputText id="txtEmail" value="#{ persona.correo }" label="Correo" validatorMessage="Correo electrónico invalido">
-                <f:validateRegex pattern="^\S+@\S+$" />
+            <h:inputText id="txtEmail" 
+                         value="#{ persona.correo }" 
+                         label="Correo" 
+                         validatorMessage="Correo electrónico invalido">
+                <f:validateRegex pattern="^\S+@\S+.\S+$" />
             </h:inputText>
-            <h:message for="txtEmail" class="formato" />
-            
+            <!--<h:message for="txtEmail" class="formato" />-->
+
             <!-- SITIO WEB -->
             <br/>
             <h:outputLabel value="Sitio web: " />
-            <h:inputText id="txtURL" value="#{ persona.web }" label="Sitio Web" >
+            <h:inputText id="txtURL" 
+                         value="#{ persona.web }" 
+                         label="Sitio Web">
                 <f:validateRequired />
                 <f:validator validatorId="com.structures.UrlValidator" />
             </h:inputText>
-            <h:message for="txtURL" class="formato" />
-            
+
             <br/>
             <h:commandButton value="Enviar" action="resultado"/>
         </h:form>
