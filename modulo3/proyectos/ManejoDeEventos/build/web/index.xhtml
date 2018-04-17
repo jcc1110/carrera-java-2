@@ -30,7 +30,7 @@
                     <h:selectOneMenu 
                                     value="#{ ub.paisSeleccionado }" 
                                     onchange="submit()">
-                        <f:valueChangeListener type="com.events.LocaleChangeListener" />
+                            <f:valueChangeListener type="com.events.LocaleChangeListener" />
                         <f:selectItems value="#{ ub.paises }" />
                     </h:selectOneMenu>
                     Nombre del país:

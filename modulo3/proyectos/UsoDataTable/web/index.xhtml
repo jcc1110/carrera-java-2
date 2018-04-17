@@ -17,7 +17,7 @@
                         var="emp" 
                         styleClass="employeeTable"
                         headerClass="employeeTableHeader"
-                        rowClasses="employeeTableOddRow, employeeTableEvenRow">                
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">
                 <h:column>
                     <f:facet name="header">Nombre</f:facet>
                     #{ emp.nombre }
@@ -34,7 +34,9 @@
                     <f:facet name="header">Salario</f:facet>
                     #{ emp.salario }
                 </h:column>
-            </h:dataTable>            
+            </h:dataTable>
+            <h:outputLabel value="Sin datos para mostrar" 
+                           rendered="#{ empty eb.lstEmpleados }" />
         </h:form>
     </h:body>
 </html>

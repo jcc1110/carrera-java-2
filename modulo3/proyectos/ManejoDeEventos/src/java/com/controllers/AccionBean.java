@@ -8,14 +8,14 @@ import javax.faces.event.ValueChangeEvent;
 
 @Named(value = "ub")
 @ApplicationScoped
-public class UsuarioBean implements Serializable {
+public class AccionBean implements Serializable {
     // Atributos
     private static final long serialVersionUID = 1L;
     private String paisSeleccionado = "Venezuela";
     private List<String> paises;
     
     // Métodos
-    public UsuarioBean() {
+    public AccionBean() {
         this.paises = new ArrayList<>();
         this.paises.add("Venezuela");
         this.paises.add("Chile");

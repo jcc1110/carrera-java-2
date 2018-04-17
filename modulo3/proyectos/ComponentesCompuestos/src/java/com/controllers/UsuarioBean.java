@@ -5,7 +5,7 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Named(value = "ub")
 @ApplicationScoped
-public class UserBean implements Serializable {
+public class UsuarioBean implements Serializable {
     // Atributos
     private static final long serialVersionUID = 1L;
     private String usuario;
@@ -13,7 +13,7 @@ public class UserBean implements Serializable {
 
     // Métodos
     public String login() {
-        return "result";
+        return "resultado";
     }
 
     public String getClave() {

@@ -4,8 +4,6 @@ public class Empleado {
     private String nombre;
     private String apellido;
     private double salario;
-    
-    public Empleado() { }
 
     public Empleado(String nombre, String apellido, double salario) {
         this.nombre = nombre;

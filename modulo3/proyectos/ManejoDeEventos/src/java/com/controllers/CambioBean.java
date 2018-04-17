@@ -6,7 +6,7 @@ import javax.faces.event.ActionEvent;
 
 @Named(value = "db")
 @ApplicationScoped
-public class DatoBean implements Serializable {
+public class CambioBean implements Serializable {
     // Atributos
     private static final long serialVersionUID = 1L;
     private String nombre;

@@ -5,16 +5,28 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Uso de AJAX</title>
+        <script>
+            function mensajeInfo() { alert('Esto quizás tarde unos minutos.'); }
+            function mensajeError() { alert('Ocurrio un error al ejecutar.'); }
+        </script>
     </h:head>
     <h:body>
         <h2>Uso de AJAX</h2>
+        <hr/>
         <h:form>
             <h:inputText id="txtNombre" value="#{ ub.nombre }">
-                <f:ajax event="keyup" render="txtMensaje" />
+                <!--<f:ajax event="keyup" render="txtMensaje" />-->
+                <!--<f:ajax event="focus" render="txtMensaje" />-->
+                <!--<f:ajax render="txtMensaje" immediate="true" />-->
             </h:inputText>
-            <h:commandButton value="Enviar">
-                <f:ajax execute="txtNombre" render="txtMensaje" onevent="function() { alert('Esto quizás tarde unos minutos.'); }" />
+            
+            <h:commandButton value="Enviar Dato">
+                <f:ajax execute="txtNombre"
+                        render="txtMensaje" 
+                        onevent="mensajeInfo()"
+                        onerror="mensajeError()" />
             </h:commandButton>
+            
             <br/><br/>
             <h:outputText id="txtMensaje" value="#{ ub.bienvenido }" />
         </h:form>

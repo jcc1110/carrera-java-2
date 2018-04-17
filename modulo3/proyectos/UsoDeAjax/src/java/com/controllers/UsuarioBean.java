@@ -21,7 +21,8 @@ public class UsuarioBean implements Serializable {
     }
     
     public String getBienvenido() {
-        return "Bienvenido/a, " + this.getNombre();
+        this.bienvenido = "Bienvenido/a, " + this.getNombre();
+        return this.bienvenido;
     }
 
     public void setBienvenido(String bienvenido) {

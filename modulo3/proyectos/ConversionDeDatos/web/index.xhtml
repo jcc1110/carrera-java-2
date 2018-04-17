@@ -8,22 +8,22 @@
     </h:head>
     <h:body>
       <!-- ConvertNumber -->
-      <h2>ConvertNumber</h2>      
+      <h2>ConvertNumber</h2>
       <ol>
           <li>
-              [minFractionDigits="2"] : 
+              [minFractionDigits="2"]:
               <h:outputText value="#{persona.monto}" >
                   <f:convertNumber minFractionDigits="2" />
               </h:outputText>
           </li>
           <li>
-              [pattern="#0.000"] : 
+              [pattern="#0.0"]: 
               <h:outputText value="#{persona.monto}" >
                   <f:convertNumber pattern="#0.0" />
               </h:outputText>
           </li>
           <li>
-              [currencySymbol="BS"] : 
+              [currencySymbol="BS"]: 
               <h:outputText value="#{persona.monto}">
                   <f:convertNumber currencySymbol="BS" type="currency" />
               </h:outputText>

@@ -11,12 +11,10 @@ import javax.enterprise.context.ApplicationScoped;
 public class EmpleadoBean implements Serializable {
     // Atributos
     public static final long serialVersionUID = 1L;
-    private Empleado empleado;   
     private List<Empleado> lstEmpleados;
     
     // Métodos
     public EmpleadoBean() {
-        empleado = new Empleado();
         this.lstEmpleados = new ArrayList<>();
         this.lstEmpleados.add(new Empleado("John", "Lopez", 200.89));
         this.lstEmpleados.add(new Empleado("Robert", "Montoya", 300.00));
@@ -31,13 +29,5 @@ public class EmpleadoBean implements Serializable {
 
     public void setLstEmpleados(List<Empleado> lstEmpleados) {
         this.lstEmpleados = lstEmpleados;
-    }
-
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
     }
 }
