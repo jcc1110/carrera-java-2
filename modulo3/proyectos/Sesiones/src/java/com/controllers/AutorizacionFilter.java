@@ -19,15 +19,15 @@ public class AutorizacionFilter implements Filter {
             // Consulta HTTP
             HttpServletRequest reqt = (HttpServletRequest) request;            
             // Respuesta HTTP
-            HttpServletResponse resp = (HttpServletResponse) response;            
+            HttpServletResponse resp = (HttpServletResponse) response;
             // Sesión actual
             HttpSession ses = reqt.getSession(false);            
             // Ruta solicitada
             String reqURI = reqt.getRequestURI();
             
             // Validación de datos
-            // reqURI.contains("/public/") || reqURI.contains("javax.faces.resource")
-            if (reqURI.contains("/index.xhtml") || (ses != null && ses.getAttribute("usuario") != null)) {
+            if (reqURI.contains("/index.xhtml") || 
+                    (ses != null && ses.getAttribute("usuario") != null)) {
                 chain.doFilter(request, response);
             } else {
                 resp.sendRedirect(reqt.getContextPath() + "/faces/index.xhtml");

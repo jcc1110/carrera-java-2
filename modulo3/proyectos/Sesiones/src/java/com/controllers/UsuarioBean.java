@@ -9,10 +9,12 @@ import javax.servlet.http.HttpSession;
 @Named(value = "ub")
 @ApplicationScoped
 public class UsuarioBean implements Serializable {
+    // Atributos
     private static final long serialVersionUID = 1L;
     private String usuario;
     private String clave;
 
+    // Métodos
     public String getUsuario() {
         return usuario;
     }
@@ -30,19 +32,20 @@ public class UsuarioBean implements Serializable {
     }
     
     public String login() {
-        String resultado;
-        
-        if ("anthony".equals(this.getUsuario().toLowerCase()) && "123456".equals(this.getClave().toLowerCase())) {
+        String resultado;        
+        if ("anthony".equals(this.getUsuario().toLowerCase()) && 
+                "123456".equals(this.getClave().toLowerCase())) {
             resultado = "exito";
             HttpSession session = this.getSesionActual();
             session.setAttribute("usuario", this.getUsuario());
             session.setAttribute("rol", "Administrador");
         } else {
             resultado = "error";
-            FacesMessage fm = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario o contraseña incorrectos", "");
+            FacesMessage fm = new FacesMessage(
+                    FacesMessage.SEVERITY_ERROR, 
+                    "Usuario o contraseña incorrectos", "Error");
             FacesContext.getCurrentInstance().addMessage(null, fm);            
-        }
-        
+        }        
         return resultado;
     }
     

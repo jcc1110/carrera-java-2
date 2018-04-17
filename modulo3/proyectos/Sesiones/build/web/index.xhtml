@@ -13,16 +13,15 @@
                 <h:outputLabel value="Usuario:" />
                 <h:inputText value="#{ ub.usuario }" label="Usuario">
                     <f:validateLength minimum="3" />
-                    <f:validateRequired />
                 </h:inputText>
                 
                 <h:outputLabel value="Clave:" />
                 <h:inputSecret value="#{ ub.clave }" label="Clave">
                     <f:validateLength minimum="3" maximum="6" />
-                    <f:validateRequired />
                 </h:inputSecret>
                 
-                <h:commandButton action="#{ ub.login }" value="Iniciar Sesión" />
+                <h:commandButton action="#{ ub.login }" 
+                                 value="Iniciar Sesión" />
             </h:panelGrid>
         </h:form>
     </h:body>
