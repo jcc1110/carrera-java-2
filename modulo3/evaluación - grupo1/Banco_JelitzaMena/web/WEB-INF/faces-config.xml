@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>service</from-outcome>
+            <to-view-id>/views/public/service.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contact</from-outcome>
+            <to-view-id>/views/public/contact.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>
+        </navigation-case>
+        </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/views/public/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/views/private/operation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/views/private/datospersonales.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>datos</from-outcome>
+            <to-view-id>/views/private/online.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

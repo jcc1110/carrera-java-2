@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../templates/master.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        Iniciar Sesión
+    </ui:define>
+
+    <ui:define name="content">
+        <h1>Iniciar Sesión</h1>
+
+        <hr/>
+        <h:form>
+            <h:outputLabel value="Usuario: " />
+            <h:inputText id="txtUsuario"
+                         value="#{lg.username}"
+                         label="Usuario">
+            <f:validateLength minimum="4" />
+            </h:inputText>
+            <br/>
+            <br/>
+            <h:outputLabel value="Clave: " />
+            <h:inputSecret id="txtClave"
+                           value="#{lg.password}"
+                         label="Clave">
+            <f:validateLength minimum="6" />
+            </h:inputSecret>
+            
+            <h:commandButton value="Ingresar" action="#{lg.login()}" />
+        </h:form>
+    </ui:define>
+    
+
+</ui:composition>
