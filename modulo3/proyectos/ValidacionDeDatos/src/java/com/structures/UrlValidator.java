@@ -9,14 +9,16 @@ import javax.faces.validator.ValidatorException;
 @FacesValidator("com.structures.UrlValidator")
 public class UrlValidator implements Validator {
     @Override
-    public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {       
+    public void validate(FacesContext context, 
+            UIComponent component, Object value) throws ValidatorException {       
         try {
             // Variables necesarias
             String urlValue = value.toString();
             
             // Valido que la cadena no tengo números y tengo http://
             if (urlValue.matches("^\\d+$") || 
-                    !urlValue.startsWith("http://", 0)) {              
+                    !urlValue.startsWith("http://", 0) ||
+                    !urlValue.startsWith("https://", 0)) {              
                 // Muestro un mensaje de error personalizado
                 FacesMessage msg = new FacesMessage(
                         "El formato de la URL es inválido", "Error");
