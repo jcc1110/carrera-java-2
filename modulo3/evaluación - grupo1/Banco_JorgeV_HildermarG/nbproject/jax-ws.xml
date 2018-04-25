@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="E_Bank_Employee">
+      <implementation-class>E_Bank_ws.E_Bank_Employee</implementation-class>
+    </service>
+    <service name="E_Bank_Client">
+      <implementation-class>E_Bank_ws.E_Bank_Client</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
