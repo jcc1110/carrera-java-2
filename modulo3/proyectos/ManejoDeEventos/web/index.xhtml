@@ -30,7 +30,8 @@
                     <h:selectOneMenu 
                                     value="#{ ub.paisSeleccionado }" 
                                     onchange="submit()">
-                            <f:valueChangeListener type="com.events.LocaleChangeListener" />
+                        <f:valueChangeListener 
+                                type="com.events.LocaleChangeListener" />
                         <f:selectItems value="#{ ub.paises }" />
                     </h:selectOneMenu>
                     Nombre del país:
@@ -46,14 +47,16 @@
             <h:form>
                 <h2>Method Binding</h2>
                 <h:outputText value="#{ db.nombre }" /><br/>
-                <h:commandButton value="Enviar" actionListener="#{ db.updateNombreBinding }" />
+                <h:commandButton value="Enviar" 
+                                 actionListener="#{ db.updateNombreBinding }" />
             </h:form>
             <h:form>
                 <h2>Interface</h2>
                 <h:outputText id="txtNombre" value="#{ db.nombre }" /><br/>
                 <h:commandButton value="Enviar" onclick="submit()">
                     <f:actionListener type="com.events.UserActionListener" />
-                    <f:setPropertyActionListener target="#{ db.nombre }" value="Pedro Perez" />
+                    <f:setPropertyActionListener 
+                        target="#{ db.nombre }" value="Pedro Perez" />
                 </h:commandButton>
             </h:form>
         </h:panelGrid>

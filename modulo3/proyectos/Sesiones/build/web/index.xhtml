@@ -12,7 +12,7 @@
             <h:panelGrid columns="2">
                 <h:outputLabel value="Usuario:" />
                 <h:inputText value="#{ ub.usuario }" label="Usuario">
-                    <f:validateLength minimum="3" />
+                    <f:validateLength minimum="3" maximum="20" />
                 </h:inputText>
                 
                 <h:outputLabel value="Clave:" />
@@ -20,8 +20,8 @@
                     <f:validateLength minimum="3" maximum="6" />
                 </h:inputSecret>
                 
-                <h:commandButton action="#{ ub.login }" 
-                                 value="Iniciar Sesión" />
+                <h:commandButton action="#{ ub.login() }" 
+                                 value="Entrar" />
             </h:panelGrid>
         </h:form>
     </h:body>

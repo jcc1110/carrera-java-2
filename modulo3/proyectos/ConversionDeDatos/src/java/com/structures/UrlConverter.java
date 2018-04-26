@@ -7,14 +7,16 @@ import javax.faces.convert.FacesConverter;
 @FacesConverter("com.controllers.UrlConverter")
 public class UrlConverter implements Converter {
     @Override
-    public Object getAsObject(FacesContext context, UIComponent component, String value) {
+    public Object getAsObject(FacesContext context, 
+            UIComponent component, String value) {
         // Variables
         StringBuilder url = new StringBuilder();
         
         // Verifico la cadena al iniciar
         if (!value.startsWith("http://", 0) || 
             !value.startsWith("https://", 0)) {
-            url.append("https://www.");
+            // Añado a la cadena actual
+            url.append("https://");
         }
         
         // Añado el valor enviado por el usuario
@@ -30,7 +32,8 @@ public class UrlConverter implements Converter {
     }
 
     @Override
-    public String getAsString(FacesContext context, UIComponent component, Object value) {
+    public String getAsString(FacesContext context, 
+            UIComponent component, Object value) {
         return value.toString();
     }
 }

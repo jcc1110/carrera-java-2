@@ -7,9 +7,9 @@
     
     <composite:interface>
         <composite:attribute name="titulo" required="true" />
-        <composite:attribute name="usuarioLabel" />
-        <composite:attribute name="claveLabel" />
-        <composite:attribute name="botonLabel" />
+        <composite:attribute name="usuarioLabel" required="true" />
+        <composite:attribute name="claveLabel" required="true" />
+        <composite:attribute name="botonLabel" required="true" />
     </composite:interface>
     
     <composite:implementation>
@@ -25,9 +25,9 @@
                 </h:inputText>
                 
                 <h:outputLabel value="#{ cc.attrs.claveLabel }" />
-                <h:inputText value="#{ ub.clave }" label="Clave">
+                <h:inputSecret value="#{ ub.clave }" label="Clave">
                     <f:validateRequired />
-                </h:inputText>
+                </h:inputSecret>
             </h:panelGrid>
             
             <!-- Botón -->

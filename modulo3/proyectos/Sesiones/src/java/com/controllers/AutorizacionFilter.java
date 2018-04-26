@@ -14,7 +14,8 @@ import javax.servlet.http.HttpSession;
 @WebFilter(filterName = "AutorizacionFilter", urlPatterns = {"/*"})
 public class AutorizacionFilter implements Filter {
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, 
+            FilterChain chain) throws IOException, ServletException {
         try {
             // Consulta HTTP
             HttpServletRequest reqt = (HttpServletRequest) request;            

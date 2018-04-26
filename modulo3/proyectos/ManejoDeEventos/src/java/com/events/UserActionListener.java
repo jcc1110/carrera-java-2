@@ -5,7 +5,8 @@ import javax.faces.event.ActionListener;
 
 public class UserActionListener implements ActionListener {
     @Override
-    public void processAction(ActionEvent event) throws AbortProcessingException {
+    public void processAction(ActionEvent event) 
+            throws AbortProcessingException {
         try {
             System.out.println(event.getComponent().getId());   
         } catch (AbortProcessingException e) {

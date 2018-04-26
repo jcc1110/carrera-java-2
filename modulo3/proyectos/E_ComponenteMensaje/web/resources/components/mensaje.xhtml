@@ -10,15 +10,21 @@
         <composite:attribute name="color" />
     </composite:interface>
     
-    <composite:implementation>      
-        <h1 style="text-align: center; color: #{ cc.attrs.color };">
-            #{ cc.attrs.codigo }
-        </h1>
-        <h2 style="text-align: center; color: #{ cc.attrs.color };">
-            #{ cc.attrs.titulo }
-        </h2>
-        <p style="text-align: center; color: #{ cc.attrs.color };">
-            #{ cc.attrs.descripcion }
-        </p>        
+    <composite:implementation>
+        <style>
+            .estilo {
+                text-align: center;
+                color: #{ cc.attrs.color };
+                width: 200px;
+                height: 200px;
+                border: 1px solid #{ cc.attrs.color };
+                background: #000;
+            }
+        </style>
+        <section class="estilo">
+            <h1>#{ cc.attrs.codigo }</h1>
+            <h2>#{ cc.attrs.titulo }</h2>
+            <p>#{ cc.attrs.descripcion }</p>
+        </section>
     </composite:implementation>
 </html>

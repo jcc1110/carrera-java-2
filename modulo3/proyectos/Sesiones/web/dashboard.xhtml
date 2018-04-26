@@ -15,8 +15,8 @@
             #{ request.getSession(false).getAttribute("rol") }
             
             <h:form>
-                <h:commandButton value="Cerrar sesión" 
-                                 action="#{ ub.logout }" />
+                <h:commandButton action="#{ ub.logout() }" 
+                                 value="Cerrar sesión" />
             </h:form>
         </h:panelGrid>
     </h:body>
