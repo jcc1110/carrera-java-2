@@ -1,5 +1,5 @@
 package com.anhurtado.controllers;
-import com.anhurtado.models.DataAccessUser;
+import com.anhurtado.database.DataAccessUser;
 import java.io.Serializable;
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;

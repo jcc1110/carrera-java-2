@@ -8,8 +8,8 @@ public class UserList {
 
     public UserList() {
         this.lstUsers = new ArrayList();
-        this.lstUsers.add(new User(1, "anhurtado", "123456"));
-        this.lstUsers.add(new User(2, "mipico", "123456"));
+        this.lstUsers.add(new User("anhurtado", "123456"));
+        this.lstUsers.add(new User("mipico", "123456"));
     }
 
     public List<User> getLstUsers() {

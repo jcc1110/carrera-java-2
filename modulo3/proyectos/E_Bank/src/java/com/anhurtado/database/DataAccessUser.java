@@ -1,5 +1,5 @@
-package com.anhurtado.models;
-import com.anhurtado.database.UserList;
+package com.anhurtado.database;
+import com.anhurtado.models.User;
 
 public class DataAccessUser {
     public boolean userValidate(String username, String password) {        
