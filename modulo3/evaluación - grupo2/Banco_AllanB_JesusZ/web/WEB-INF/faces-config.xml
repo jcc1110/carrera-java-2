@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <!-- Apĺica para todas las vistas dentro del proyecto -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>about</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>service</from-outcome>
+            <to-view-id>/views/public/service.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contact</from-outcome>
+            <to-view-id>/views/public/contact.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/views/public/login.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>exito</from-outcome>
+            <to-view-id>/views/private/operation.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/views/private/error.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>persona</from-outcome>
+            <to-view-id>/views/private/persona.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transferir</from-outcome>
+            <to-view-id>/views/private/transferir.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>afiliacion</from-outcome>
+            <to-view-id>/views/private/afiliacion.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>movimientos</from-outcome>
+            <to-view-id>/views/private/movimientos.xhtml</to-view-id>
+        </navigation-case>                                                      
+        <navigation-case>
+            <from-outcome>operacion</from-outcome>
+            <to-view-id>/views/private/operation.xhtml</to-view-id>
+        </navigation-case>         
+    </navigation-rule>
+
+</faces-config>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <composite:interface>
+        <composite:attribute name="titulo" required="true" />
+    </composite:interface>
+    
+    <composite:implementation>
+        <h:outputStylesheet library="css" name="styles.css" />
+        <h2>#{ cc.attrs.titulo }</h2>
+        <h:form>
+            <h:dataTable 
+                value="#{ LoginBean.lstEmpleado }"
+                rendered="#{ not empty LoginBean.lstEmpleado }"
+                        var="empleado" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">
+                <h:column>
+                    <f:facet name="header">Usuario</f:facet>
+                    #{ empleado.usuario }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Clave</f:facet>
+                    #{ empleado.clave }
+                </h:column>            
+                
+            </h:dataTable>            
+        </h:form>
+    </composite:implementation>
+</html>
+

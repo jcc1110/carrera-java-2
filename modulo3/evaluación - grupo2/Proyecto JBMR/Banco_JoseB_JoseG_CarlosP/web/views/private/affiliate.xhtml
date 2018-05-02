@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="./../../templates/master2.xhtml">
+
+    <ui:define name="title">
+        Afiliación de Cuentas
+    </ui:define>
+
+    <ui:define name="content">
+        <h1>Afiliacion de Cuentas</h1>
+        <hr />
+        <h:form>
+            <!-- NOMBRE -->
+            <h:outputLabel value="Nombre: " />
+            <h:inputText id="txtName" 
+                         value="#{ persona.nombre }" 
+                         label="Nombre">
+                <f:validateLength minimum="3" maximum="8" />
+            </h:inputText>
+            <h:message for="txtName" class="formato" />
+
+            <!-- EDAD -->
+            <br/>
+            <h:outputLabel value="Apellido: " />
+            <h:inputText id="txtAge" 
+                         value="#{ persona.apellido }" 
+                         label="Apellido">
+                <f:validateLength minimum="3"  maximum="20" />
+            </h:inputText>
+            <h:message for="txtApellidos" class="formato" />
+
+            <!-- SALARIO -->
+            <br/>
+            <h:outputLabel value="Cuenta: " />
+            <h:inputText id="txtSalary" 
+                         value="#{ persona.cuenta }" 
+                         label="Cuenta">
+                <f:validateDoubleRange minimum="100.00" />
+            </h:inputText>
+            <h:message for="txtCount" class="formato" />
+
+            <!-- CORREO -->
+            <br/>
+            <h:outputLabel value="Correo electrónico: " />
+            <h:inputText id="txtEmail" 
+                         value="#{ persona.correo }" 
+                         label="Correo electrónico" 
+                         validatorMessage="Correo electrónico inválido">
+                <f:validateRegex pattern="^\S+@\S+.\S+$" />
+            </h:inputText>
+            <h:message for="txtEmail" class="formato" />
+
+            <!-- SITIO WEB -->
+            <br/>
+            <h:outputLabel value="Cedula: " />
+            <h:inputText id="txtURL" 
+                         value="#{ persona.cedula }" 
+                         label="Cedula">
+                <f:validateRequired />
+               <!-- <f:validator validatorId="com.structures.UrlValidator" />-->
+            </h:inputText>
+
+            <br/>
+            <h:commandButton value="Enviar"
+                             actionListener="#{ persona.nuevoAfiliado() }" />
+            <hr/>
+            
+            <h:dataTable 
+                value="#{ persona.lstafi }"
+                rendered="#{ not empty persona.lstafi }"
+                        var="afi2" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">
+                <h:column>
+                    <f:facet name="header">nombre</f:facet>
+                    #{ afi2.nombre}
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">apellidos</f:facet>
+                    #{ afi2.apellido }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">cuenta</f:facet>
+                    #{ afi2.cuenta }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">correo</f:facet>
+                    #{ afi2.correo }
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">cedula</f:facet>
+                    #{ afi2.cedula}
+                </h:column>
+            </h:dataTable>
+            <h:outputLabel value="Sin datos para mostrar" 
+                           rendered="#{ empty persona.lstafi }"
+                           style="color:blue;" />
+        </h:form>
+
+    </ui:define>
+</ui:composition>

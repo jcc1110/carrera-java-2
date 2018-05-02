@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="./../../templates/master2.xhtml">
+
+    <ui:define name="title">
+        Datos de las Personas
+    </ui:define>
+    
+    <ui:define name="content">
+        <hr/>
+        <h:form>
+            <h:dataTable 
+                value="#{ persona.lstafi }"
+                rendered="#{ not empty persona.lstafi }"
+                        var="afi2" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">
+                <h:column>
+                    <f:facet name="header">nombre</f:facet>
+                    #{ afi2.nombre}
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">apellidos</f:facet>
+                    #{ afi2.apellido }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">cuenta</f:facet>
+                    #{ afi2.cuenta }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">correo</f:facet>
+                    #{ afi2.correo }
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">cedula</f:facet>
+                    #{ afi2.cedula}
+                </h:column>
+            </h:dataTable>
+            <h:outputLabel value="Sin datos para mostrar" 
+                           rendered="#{ empty persona.lstafi }"
+                           style="color:blue;" />
+     </h:form>  
+   </ui:define>
+</ui:composition>

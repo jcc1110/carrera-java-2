@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../templates/master.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title">
+        Iniciar seción
+    </ui:define>
+
+    <ui:define name="content">
+         <h3 class="text-info">Iniciar Sesión</h3>
+        <hr />
+          <h:form>
+            
+                <h:outputLabel value="Usuario: "  for="txtUsuario"  />
+                <h:inputText id="txtUsuario" class="form-control" value="#{ loginBean.id }" label="Usuario">
+                    <f:validateLength minimum="3" maximum="10">
+                        
+                    </f:validateLength>
+                    
+                </h:inputText>                
+            <hr/>
+            
+                <h:outputLabel  value="Clave...: " for= "txtClave" />
+                <h:inputSecret id="txtClave" class="form-control" value="#{ loginBean.password }" label="Clave">
+                    <f:validateLength minimum="3" maximum="6">
+                        
+                    </f:validateLength>
+                    
+                </h:inputSecret>                
+            <hr/>
+            <h:commandButton class="btn btn-primary" action="#{ loginBean.login }" value="Iniciar Sesión" />
+        </h:form>
+    </ui:define>
+    
+</ui:composition>

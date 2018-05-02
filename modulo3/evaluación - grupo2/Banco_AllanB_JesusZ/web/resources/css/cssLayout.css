@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 10px auto;
+    width: 80%;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link, a:visited {
+  color: #045491;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+#top {
+    position: relative;
+    right: 30px;
+    background-color: #C0C0C0;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+    width: 60%;
+}
+
+#top h1{
+    font-size: 40px;
+}
+
+#bottom {
+    position: relative;
+    bottom: 230px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/*#content {
+    position: relative;
+    top:20px;
+    left: 100px;
+    box-shadow: 1px 0.5px 0px #000;
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    border-radius: 5px;
+}*/
+
+#content form{
+
+}
+
+#content form commandLink{
+    padding: 10px;
+}
+
+#contenido h2{
+    margin: auto;
+}
+
+#info{
+    /*position: relative;
+    left: 230px;
+    bottom: 330px;*/
+    width: 60%;
+    height: 200px;
+}
+
+#formulario{
+    position: relative;
+    top: 10px;
+    width: 90%;
+    height: 230px;
+    margin: auto;
+    box-shadow: 1px 0.5px 0px #000;
+    border-radius: 5px;
+}
+
+#parrafo{
+    position: relative;
+    left: 280px;
+    bottom: 290px;
+    width: 60%;
+    height: 250px;
+}

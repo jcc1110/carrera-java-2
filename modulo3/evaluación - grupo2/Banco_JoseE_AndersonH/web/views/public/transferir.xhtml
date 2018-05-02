@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+      
+    <h:head>
+        <title>Manejo de Eventos</title>
+         <script>
+            function mensajeInfo() { alert('Transferencia Exitosa.');
+                                     window.location.href='resultado.xhtml';}
+           
+        </script>
+    </h:head>
+    <h:body>   
+        <h:form>
+        <h:panelGrid columns="2">
+                        
+                <h2>Tranferencias entre Cuentas</h2>
+                <h:panelGrid columns="2">
+                    Seleccionar:
+                    <h:selectOneMenu 
+                                    value="#{ cuentas.cuentaSeleccionada }" 
+                                    onchange="submit()" 
+                                    valueChangeListener="#{ cuentas.cambioDeCuenta }">
+                        <f:selectItems value="#{ cuentas.cuentas }" />
+                    </h:selectOneMenu>
+                    Nombre de Cuenta:
+                    <h:outputText value="#{ cuentas.cuentaSeleccionada }"/>
+                    
+                    Monto a Transferir:
+                    <h:inputText value="#{cuentas.monto}">
+                        <f:convertNumber currencySymbol="" type="currency" pt:required="required"/>
+                    </h:inputText>
+                    Concepto:
+                    <h:inputText value="#{cuentas.concepto}">
+                        
+                    </h:inputText>
+                    
+                <!--<h:commandButton value="Transferir" action="mensaje"/>-->
+                <h:commandButton value="Enviar Dato">
+                <f:ajax execute="txtNombre"
+                        render="txtMensaje" 
+                        onevent="mensajeInfo()" />
+            </h:commandButton>
+                </h:panelGrid>
+              
+            
+        </h:panelGrid>
+            
+            </h:form>
+
+        <hr/>
+        
+<!--        <h1>ActionListener</h1>
+        <h:panelGrid columns="2">
+            <h:form>
+                <h2>Method Binding</h2>
+                <h:outputText value="#{ db.nombre }" /><br/>
+                <h:commandButton value="Enviar" 
+                                 actionListener="#{ db.updateNombreBinding }" />
+            </h:form>
+            <h:form>
+                <h2>Interface</h2>
+                <h:outputText id="txtNombre" value="#{ db.nombre }" /><br/>
+                <h:commandButton value="Enviar" onclick="submit()">
+                    <f:actionListener type="com.events.UserActionListener" />
+                    <f:setPropertyActionListener 
+                        target="#{ db.nombre }" value="Pedro Perez" />
+                </h:commandButton>
+            </h:form>
+        </h:panelGrid>-->
+    </h:body>
+</html>

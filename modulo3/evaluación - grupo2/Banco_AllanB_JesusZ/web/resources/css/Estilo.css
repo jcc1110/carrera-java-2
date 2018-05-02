@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    background: gray;
+    text-align: center;
+    margin: 10px auto;
+    background: grey;
+    width: 90%;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+#menu{
+width: 40%;
+padding: 10px 10px;
+}
+#info{
+width: 60%;
+position: relative;
+left: 230px;
+text-align: center;
+}
+#footer{
+background: gray;
+width: 90%;
+margin: auto;
+border-radius: 5px;
+text-align: center;
+color: #fff;
+padding: 20px 20px;
+position: relative;
+top: 200px;
+}
+
+#parrafo{
+}
+
+.employeeTable {   
+   border-collapse: collapse;
+   border: 1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align: center;
+   background: none repeat scroll 0 0 #B5B5B5;
+   border-bottom: 1px solid #000000;  
+   padding: 2px;
+}
+
+.employeeTableOddRow {
+   text-align: center;
+   background: none repeat scroll 0 0 #FFFFFF;    
+}
+
+.employeeTableEvenRow {
+   text-align: center;
+   background: none repeat scroll 0 0 #D3D3D3;
+}

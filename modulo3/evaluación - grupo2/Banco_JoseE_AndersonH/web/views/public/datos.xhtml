@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Uso de DataTable</title>
+        <h:outputStylesheet library="css" name="styles.css" /> 
+    </h:head>
+    <h:body>
+        <h1>Información</h1>
+        <hr/>
+        <h:form>
+            <h:dataTable 
+                        value="#{ datosBean.lstDatos }"
+                        rendered="#{ not empty datosBean.lstDatos }"
+                        var="datos" 
+                        styleClass="employeeTable"
+                        headerClass="employeeTableHeader"
+                        rowClasses="employeeTableOddRow, employeeTableEvenRow">
+                <h:column>
+                    <f:facet name="header">Cédula</f:facet>
+                    #{ datos.cedula }
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                    #{ datos.nombre }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                    #{ datos.apellido }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Género</f:facet>
+                    #{ datos.genero }
+                </h:column>                
+                <h:column>
+                    <f:facet name="header">Saldo</f:facet>
+                    #{ datos.salario }
+                </h:column>
+            </h:dataTable>
+            <h:outputLabel value="Sin datos para mostrar" 
+                           rendered="#{ empty datosBean.lstDatos }"
+                           style="color:blue;" />
+        </h:form>
+    </h:body>
+</html>
